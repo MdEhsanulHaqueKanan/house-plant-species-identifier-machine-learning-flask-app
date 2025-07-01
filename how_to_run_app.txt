@@ -1,0 +1,17 @@
+1. Download the project files.
+
+2. Open project files on VS Code.
+
+3. Open a new terminal.
+
+4. Create a new environment with this command:
+python -m venv plantclassifier  
+
+5. Activate the environment:
+.\plantclassifier\Scripts\activate
+
+6. Install the required libraries:
+pip install -r requirements.txt   
+
+7. Run the app with this command:
+flask run     

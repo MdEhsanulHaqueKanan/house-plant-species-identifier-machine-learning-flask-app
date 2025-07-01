@@ -1,0 +1,30 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Plant Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌿 House Plant Species Identifier</h1>
+        <p>Upload an image of a house plant to identify its species.</p>
+
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Classify Plant</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            <h2>Prediction Result</h2>
+            <p class="prediction-label"><strong>Species:</strong> {{ prediction }}</p>
+            <p class="confidence-score"><strong>Confidence:</strong> {{ confidence }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
