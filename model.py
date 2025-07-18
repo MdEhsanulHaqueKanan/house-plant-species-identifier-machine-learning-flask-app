@@ -3,6 +3,7 @@
 import torch
 from torch import nn
 from torchvision import models, transforms
+import sys
 from PIL import Image
 import io
 
@@ -46,10 +47,16 @@ def load_model_and_classes():
     # Create model with the correct number of classes
     model = create_efficientnet_b0(num_classes=num_classes)
     
-    # Load the state dictionary
-    model.load_state_dict(
-        torch.load(MODEL_PATH, map_location=DEVICE)
-    )
+    # Load the state dictionary with robust error handling
+    try:
+        model.load_state_dict(
+            torch.load(MODEL_PATH, map_location=DEVICE)
+        )
+    except FileNotFoundError:
+        print(f"\n--- FATAL ERROR ---")
+        print(f"Model file not found at: '{MODEL_PATH}'")
+        print("Please download the model weights from the link in the README and place them in the 'models' directory.")
+        sys.exit(1) # Exit the application
     
     # Set model to evaluation mode
     model.to(DEVICE)

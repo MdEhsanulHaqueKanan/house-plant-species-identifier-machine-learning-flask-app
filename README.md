@@ -75,14 +75,26 @@ The application follows a simple yet robust client-server architecture:
 
 ## Results 📈
 
-Our machine learning model was trained to identify various house plant species. The training and evaluation process was documented in the [Kaggle Notebook](https://github.com/MdEhsanulHaqueKanan/house-plant-species-identifier-machine-learning-flask-app/blob/main/notebook/house-plant-identification.ipynb).
+Our machine learning model was trained to identify various house plant species. The complete training and evaluation process is documented in the [Kaggle Notebook](https://github.com/MdEhsanulHaqueKanan/house-plant-species-identifier-machine-learning-flask-app/blob/main/notebook/house-plant-identification.ipynb).
 
-Here are the key performance metrics achieved after 10 epochs of training:
+### Summary of Model Performance
 
-* **Final Training Accuracy:** **87.56%**
-* **Final Training Loss:** **0.4358**
-* **Final Validation Accuracy:** **81.85%**
-* **Final Validation Loss:** **0.6232**
+After training for 10 epochs, the model achieved the following key performance metrics on the test dataset:
+
+* **Overall Accuracy:** **82%**
+* **Final Validation Loss (from training logs):** 0.6232
+* **Final Training Loss (from training logs):** 0.4358
+
+### Detailed Classification Report (Test Set)
+
+The comprehensive classification report on the test set provides a detailed breakdown of the model's precision, recall, and F1-score for each plant species, as well as overall averages:
+
+| Metric       | Precision | Recall | F1-Score | Support |
+| :----------- | :-------- | :----- | :------- | :------ |
+| **Macro Avg** | **0.82** | **0.82** | **0.81** | **1478**|
+| **Weighted Avg** | **0.83** | **0.82** | **0.82** | **1478**|
+
+---
 
 ## Local Setup & Installation
 
@@ -117,7 +129,12 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-**4. Run the Application**
+**4. Download the Model File**
+The pre-trained model weights (`house_plant_classifier_v1.pth`) are not tracked by Git. You must download it manually and place it in the `models/` directory for the application to work correctly.
+
+**[Download the model file from Google Drive here](https://drive.google.com/file/d/1qAICG_FhkrZAnGURVBRlp3KFsAgQ092t/view?usp=sharing)**
+
+**5. Run the Application**
 ```bash
 flask run
 ```
