@@ -9,8 +9,8 @@ import io
 # --- CONFIGURATION ---
 # Use CPU for inference, as it's more common for deployment environments
 DEVICE = "cpu"
-# Path to your trained model weights
-MODEL_PATH = "house_plant_classifier_v1.pth"
+# Path to your trained model weights inside the 'models' directory
+MODEL_PATH = "models/house_plant_classifier_v1.pth"
 # Path to the text file containing class names
 CLASS_NAMES_PATH = "class_names.txt"
 

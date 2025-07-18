@@ -1,0 +1,51 @@
+# .gitignore
+
+# --- Virtual Environment ---
+# Ignore the virtual environment folder. This is specific to your 'how_to_run_app.txt'.
+/plantclassifier/
+
+# General virtual environment names
+/venv/
+/env/
+/.venv/
+
+# --- Python Cache & Artifacts ---
+# Ignore Python bytecode and cache folders
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# --- Flask Specific ---
+# Ignore the instance folder which can contain configuration and databases
+instance/
+
+# --- Machine Learning Artifacts ---
+# Ignore large model files. These should be hosted elsewhere (e.g., cloud storage, Git LFS)
+# and downloaded, not stored in the repository.
+*.pth
+*.pt
+*.h5
+*.onnx
+
+# Ignore datasets or large data files
+*.csv
+*.zip
+data/
+
+# --- IDE / Editor Configuration ---
+# Ignore configurations for popular editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- Operating System Files ---
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
