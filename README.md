@@ -89,7 +89,7 @@ The application follows a simple yet robust client-server architecture:
 
 *   **Model**: `EfficientNet-B0`
 *   **Framework**: PyTorch
-*   **Training**: The model was custom-trained on a diverse dataset of house plant images. The weights used in this application (`house_plant_classifier_v1.pth`) are the result of this training process.
+*   **Training**: This model is not pre-trained. The `house_plant_classifier_v1.pth` weights are the result of a complete training process executed from scratch on a Kaggle GPU. This involved data augmentation and writing the full PyTorch training/validation loop to fine-tune the model. The entire end-to-end process is documented in the [Kaggle Notebook](./notebook/house-plant-identification.ipynb) included in this repository.
 *   **Classes**: The model is capable of identifying **47 different species** of common house plants. See `class_names.txt` for the full list.
 
 ---
